@@ -65,6 +65,10 @@ still should use sampling to get the gradient, though $\nabla_\theta\log\pi_\the
 
 And even worse, we have to use $\nabla_\theta \log \pi_\theta(x)$ to do PPO, but the code always uses $\nabla_\theta \log \pi_\theta(x|z)$. The error of sampling always impacts the iters, which makes results ambigous.
 
+Still, we sampled independent $(x_i,z_i)$ where $x_i\sim {\rm Uni}[-5,5]^2$ to train and rl the mlp.
+
+![fig1](images/gmm_landscape_3d.png)
+
 # 2026.4.20
 Change the base model to Normalizing Flow Model, using RealNVP to realize it.
 

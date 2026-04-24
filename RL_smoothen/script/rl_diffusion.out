@@ -1,0 +1,151 @@
+The current job ID is 16062
+List of CUDA devices: 0
+
+Job ID: 16062
+CUDA_VISIBLE_DEVICES: 0
+==== Job started at Sat Apr 18 17:53:17 CST 2026 ====
+==== Current working directory is /home/user_milksang/private/homefile/RL_smoothen/toy_model ====
+Sat Apr 18 17:53:17 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200 NVL                Off |   00000000:27:00.0 Off |                    0 |
+| N/A   33C    P0             70W /  600W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Step 1: Building FlowModel + Boltzmann Pretraining...
+============================================================
+  Model: layers=8, hidden=64, coupling=spline, params=47,304
+/opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/exp_2d/model.py:45: UserWarning: torch.searchsorted(): input value tensor is non-contiguous, this will lower the performance due to extra data copy when converting non-contiguous tensor to contiguous, please use contiguous input value tensor if possible. This message will only appear once per program. (Triggered internally at /pytorch/aten/src/ATen/native/BucketizationUtils.h:32.)
+  bin_idx = torch.searchsorted(cumheights[:, 1:].contiguous(),
+  Pretrain (Boltzmann β=1.0) epoch 0/300, NLL=1.3641
+  Pretrain (Boltzmann β=1.0) epoch 5/300, NLL=1.0974
+  Pretrain (Boltzmann β=1.0) epoch 10/300, NLL=0.9119
+  Pretrain (Boltzmann β=1.0) epoch 15/300, NLL=0.7008
+  Pretrain (Boltzmann β=1.0) epoch 20/300, NLL=0.6250
+  Pretrain (Boltzmann β=1.0) epoch 25/300, NLL=0.4955
+  Pretrain (Boltzmann β=1.0) epoch 30/300, NLL=0.3566
+  Pretrain (Boltzmann β=1.0) epoch 35/300, NLL=0.2850
+  Pretrain (Boltzmann β=1.0) epoch 40/300, NLL=0.0978
+  Pretrain (Boltzmann β=1.0) epoch 45/300, NLL=0.1783
+  Pretrain (Boltzmann β=1.0) epoch 50/300, NLL=0.0373
+  Pretrain (Boltzmann β=1.0) epoch 55/300, NLL=-0.1268
+  Pretrain (Boltzmann β=1.0) epoch 60/300, NLL=-0.0624
+  Pretrain (Boltzmann β=1.0) epoch 65/300, NLL=-0.0152
+  Pretrain (Boltzmann β=1.0) epoch 70/300, NLL=-0.0659
+  Pretrain (Boltzmann β=1.0) epoch 75/300, NLL=-0.0389
+  Pretrain (Boltzmann β=1.0) epoch 80/300, NLL=-0.1482
+  Pretrain (Boltzmann β=1.0) epoch 85/300, NLL=-0.3408
+  Pretrain (Boltzmann β=1.0) epoch 90/300, NLL=-0.2717
+  Pretrain (Boltzmann β=1.0) epoch 95/300, NLL=-0.3496
+  Pretrain (Boltzmann β=1.0) epoch 100/300, NLL=-0.1942
+  Pretrain (Boltzmann β=1.0) epoch 105/300, NLL=-0.3923
+  Pretrain (Boltzmann β=1.0) epoch 110/300, NLL=-0.1343
+  Pretrain (Boltzmann β=1.0) epoch 115/300, NLL=-0.1876
+  Pretrain (Boltzmann β=1.0) epoch 120/300, NLL=-0.5209
+  Pretrain (Boltzmann β=1.0) epoch 125/300, NLL=-0.4245
+  Pretrain (Boltzmann β=1.0) epoch 130/300, NLL=-0.3647
+  Pretrain (Boltzmann β=1.0) epoch 135/300, NLL=-0.3126
+  Pretrain (Boltzmann β=1.0) epoch 140/300, NLL=-0.2289
+  Pretrain (Boltzmann β=1.0) epoch 145/300, NLL=-0.3129
+  Pretrain (Boltzmann β=1.0) epoch 150/300, NLL=-0.2719
+  Pretrain (Boltzmann β=1.0) epoch 155/300, NLL=-0.1610
+  Pretrain (Boltzmann β=1.0) epoch 160/300, NLL=-0.0475
+  Pretrain (Boltzmann β=1.0) epoch 165/300, NLL=-0.1939
+  Pretrain (Boltzmann β=1.0) epoch 170/300, NLL=-0.2372
+  Pretrain (Boltzmann β=1.0) epoch 175/300, NLL=-0.3779
+  Pretrain (Boltzmann β=1.0) epoch 180/300, NLL=-0.2859
+  Pretrain (Boltzmann β=1.0) epoch 185/300, NLL=-0.3777
+  Pretrain (Boltzmann β=1.0) epoch 190/300, NLL=-0.1246
+  Pretrain (Boltzmann β=1.0) epoch 195/300, NLL=-0.4440
+  Pretrain (Boltzmann β=1.0) epoch 200/300, NLL=-0.4244
+  Pretrain (Boltzmann β=1.0) epoch 205/300, NLL=-0.2551
+  Pretrain (Boltzmann β=1.0) epoch 210/300, NLL=-0.3812
+  Pretrain (Boltzmann β=1.0) epoch 215/300, NLL=-0.4402
+  Pretrain (Boltzmann β=1.0) epoch 220/300, NLL=-0.3611
+  Pretrain (Boltzmann β=1.0) epoch 225/300, NLL=-0.4548
+  Pretrain (Boltzmann β=1.0) epoch 230/300, NLL=-0.2956
+  Pretrain (Boltzmann β=1.0) epoch 235/300, NLL=-0.5097
+  Pretrain (Boltzmann β=1.0) epoch 240/300, NLL=-0.5760
+  Pretrain (Boltzmann β=1.0) epoch 245/300, NLL=-0.3126
+  Pretrain (Boltzmann β=1.0) epoch 250/300, NLL=-0.4407
+  Pretrain (Boltzmann β=1.0) epoch 255/300, NLL=-0.4016
+  Pretrain (Boltzmann β=1.0) epoch 260/300, NLL=-0.3303
+  Pretrain (Boltzmann β=1.0) epoch 265/300, NLL=-0.3322
+  Pretrain (Boltzmann β=1.0) epoch 270/300, NLL=-0.4718
+  Pretrain (Boltzmann β=1.0) epoch 275/300, NLL=-0.1783
+  Pretrain (Boltzmann β=1.0) epoch 280/300, NLL=-0.4230
+  Pretrain (Boltzmann β=1.0) epoch 285/300, NLL=-0.3044
+  Pretrain (Boltzmann β=1.0) epoch 290/300, NLL=-0.3031
+  Pretrain (Boltzmann β=1.0) epoch 295/300, NLL=-0.6117
+
+============================================================
+Step 2: PPO Training (RL fine-tuning)...
+============================================================
+  PPO iter 20/200: mean_r=-5.21, best_r=-0.13, kl=3.1331, lr=3.00e-04 [div:1]
+  PPO iter 40/200: mean_r=-3.58, best_r=-0.15, kl=-0.6308, lr=3.00e-04 [div:4]
+  PPO iter 60/200: mean_r=-6.75, best_r=-0.67, kl=1.6680, lr=3.00e-04 [div:6]
+  PPO iter 80/200: mean_r=-7.24, best_r=-1.00, kl=1.8969, lr=3.00e-04 [div:8]
+  PPO iter 100/200: mean_r=-3.36, best_r=-0.98, kl=2.0945, lr=3.00e-04 [div:12]
+  PPO iter 120/200: mean_r=-3.18, best_r=-0.02, kl=1.3087, lr=3.00e-04 [div:15]
+  PPO iter 140/200: mean_r=-4.04, best_r=-0.69, kl=1.9084, lr=3.00e-04 [div:19]
+  PPO iter 160/200: mean_r=-2.29, best_r=-0.38, kl=-4.3463, lr=3.00e-04 [div:20]
+  PPO iter 180/200: mean_r=-1.08, best_r=-0.46, kl=-9.4535, lr=3.00e-04 [div:22]
+  PPO iter 200/200: mean_r=-2.29, best_r=-1.53, kl=-3.4028, lr=3.00e-04 [div:25]
+  Restored best model (mean_r=-0.3129)
+
+============================================================
+Step 3: CMA-ES Direct Optimization...
+============================================================
+  CMA-ES evals=7/51200: global_best_r=-20.4578, restarts=1
+  CMA-ES evals=5005/51200: global_best_r=-0.9950, restarts=9
+  CMA-ES evals=10003/51200: global_best_r=-0.0000, restarts=17
+  CMA-ES evals=10009/51200: global_best_r=-0.0000, restarts=17
+  CMA-ES evals=15001/51200: global_best_r=-0.0000, restarts=25
+  CMA-ES evals=15007/51200: global_best_r=-0.0000, restarts=25
+  CMA-ES evals=20005/51200: global_best_r=-0.0000, restarts=33
+  CMA-ES evals=25003/51200: global_best_r=-0.0000, restarts=41
+  CMA-ES evals=25009/51200: global_best_r=-0.0000, restarts=41
+  CMA-ES evals=30001/51200: global_best_r=-0.0000, restarts=49
+  CMA-ES evals=30007/51200: global_best_r=-0.0000, restarts=49
+  CMA-ES evals=35005/51200: global_best_r=-0.0000, restarts=57
+  CMA-ES evals=40003/51200: global_best_r=-0.0000, restarts=65
+  CMA-ES evals=40009/51200: global_best_r=-0.0000, restarts=65
+  CMA-ES evals=45001/51200: global_best_r=-0.0000, restarts=73
+  CMA-ES evals=45007/51200: global_best_r=-0.0000, restarts=73
+  CMA-ES evals=50005/51200: global_best_r=-0.0000, restarts=81
+  CMA-ES done: best_r=-0.0000, total_evals=51205
+
+  [Step 4 skipped] Use --scan to enable FIM landscape scanning.
+
+============================================================
+Step 5: Generating visualizations...
+============================================================
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig2_trajectory.gif
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig3_convergence.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig5_dataset.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig6_distributions.png
+    Computing log π for 201 snapshots...
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig7_distribution_evolution.gif
+
+============================================================
+Results (2D Rastrigin, FlowModel spline):
+  PPO final mean reward:   -2.2942
+  PPO best mean reward:    -0.3129
+  CMA-ES best reward:      -0.0000
+  Outputs saved to: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow
+============================================================
+==== Job finished at Sat Apr 18 17:54:33 CST 2026 ====

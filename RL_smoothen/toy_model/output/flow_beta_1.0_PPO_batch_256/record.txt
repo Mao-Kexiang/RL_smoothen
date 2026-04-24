@@ -1,0 +1,419 @@
+The current job ID is 16136
+List of CUDA devices: 0
+
+Job ID: 16136
+CUDA_VISIBLE_DEVICES: 0
+==== Job started at Mon Apr 20 22:24:55 CST 2026 ====
+==== Current working directory is /home/user_milksang/private/homefile/RL_smoothen/toy_model ====
+Mon Apr 20 22:24:55 2026       
++-----------------------------------------------------------------------------------------+
+| NVIDIA-SMI 590.48.01              Driver Version: 590.48.01      CUDA Version: 13.1     |
++-----------------------------------------+------------------------+----------------------+
+| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |
+|                                         |                        |               MIG M. |
+|=========================================+========================+======================|
+|   0  NVIDIA H200 NVL                Off |   00000000:27:00.0 Off |                    0 |
+| N/A   33C    P0             70W /  600W |       0MiB / 143771MiB |      0%      Default |
+|                                         |                        |             Disabled |
++-----------------------------------------+------------------------+----------------------+
+
++-----------------------------------------------------------------------------------------+
+| Processes:                                                                              |
+|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |
+|        ID   ID                                                               Usage      |
+|=========================================================================================|
+|  No running processes found                                                             |
++-----------------------------------------------------------------------------------------+
+============================================================
+Step 1: Building FlowModel + boltzmann Pretraining...
+============================================================
+  Model: layers=8, hidden=64, coupling=affine, params=35,344
+  Generating fixed dataset: 100000 samples from Boltzmann(beta=1.0)...
+  Dataset ready. Shape: torch.Size([100000, 2])
+  Pretrain (Boltzmann β=1.0) epoch 0/1000, NLL=2.3345
+  Pretrain (Boltzmann β=1.0) epoch 5/1000, NLL=2.1705
+  Pretrain (Boltzmann β=1.0) epoch 10/1000, NLL=2.0477
+  Pretrain (Boltzmann β=1.0) epoch 15/1000, NLL=2.2003
+  Pretrain (Boltzmann β=1.0) epoch 20/1000, NLL=2.1056
+  Pretrain (Boltzmann β=1.0) epoch 25/1000, NLL=2.1208
+  Pretrain (Boltzmann β=1.0) epoch 30/1000, NLL=2.1325
+  Pretrain (Boltzmann β=1.0) epoch 35/1000, NLL=2.1248
+  Pretrain (Boltzmann β=1.0) epoch 40/1000, NLL=2.0639
+  Pretrain (Boltzmann β=1.0) epoch 45/1000, NLL=2.1561
+  Pretrain (Boltzmann β=1.0) epoch 50/1000, NLL=2.1558
+  Pretrain (Boltzmann β=1.0) epoch 55/1000, NLL=2.2435
+  Pretrain (Boltzmann β=1.0) epoch 60/1000, NLL=2.2232
+  Pretrain (Boltzmann β=1.0) epoch 65/1000, NLL=2.1377
+  Pretrain (Boltzmann β=1.0) epoch 70/1000, NLL=2.1490
+  Pretrain (Boltzmann β=1.0) epoch 75/1000, NLL=2.1363
+  Pretrain (Boltzmann β=1.0) epoch 80/1000, NLL=2.2040
+  Pretrain (Boltzmann β=1.0) epoch 85/1000, NLL=2.1165
+  Pretrain (Boltzmann β=1.0) epoch 90/1000, NLL=2.1429
+  Pretrain (Boltzmann β=1.0) epoch 95/1000, NLL=2.1046
+  Pretrain (Boltzmann β=1.0) epoch 100/1000, NLL=2.0923
+  Pretrain (Boltzmann β=1.0) epoch 105/1000, NLL=2.1256
+  Pretrain (Boltzmann β=1.0) epoch 110/1000, NLL=2.1255
+  Pretrain (Boltzmann β=1.0) epoch 115/1000, NLL=2.0409
+  Pretrain (Boltzmann β=1.0) epoch 120/1000, NLL=2.1432
+  Pretrain (Boltzmann β=1.0) epoch 125/1000, NLL=2.1771
+  Pretrain (Boltzmann β=1.0) epoch 130/1000, NLL=2.0819
+  Pretrain (Boltzmann β=1.0) epoch 135/1000, NLL=2.1673
+  Pretrain (Boltzmann β=1.0) epoch 140/1000, NLL=2.1148
+  Pretrain (Boltzmann β=1.0) epoch 145/1000, NLL=2.1282
+  Pretrain (Boltzmann β=1.0) epoch 150/1000, NLL=2.1267
+  Pretrain (Boltzmann β=1.0) epoch 155/1000, NLL=2.0584
+  Pretrain (Boltzmann β=1.0) epoch 160/1000, NLL=2.0679
+  Pretrain (Boltzmann β=1.0) epoch 165/1000, NLL=2.0030
+  Pretrain (Boltzmann β=1.0) epoch 170/1000, NLL=2.0077
+  Pretrain (Boltzmann β=1.0) epoch 175/1000, NLL=1.8674
+  Pretrain (Boltzmann β=1.0) epoch 180/1000, NLL=1.8964
+  Pretrain (Boltzmann β=1.0) epoch 185/1000, NLL=1.8316
+  Pretrain (Boltzmann β=1.0) epoch 190/1000, NLL=1.5658
+  Pretrain (Boltzmann β=1.0) epoch 195/1000, NLL=1.5640
+  Pretrain (Boltzmann β=1.0) epoch 200/1000, NLL=1.2904
+  Pretrain (Boltzmann β=1.0) epoch 205/1000, NLL=1.2925
+  Pretrain (Boltzmann β=1.0) epoch 210/1000, NLL=1.0714
+  Pretrain (Boltzmann β=1.0) epoch 215/1000, NLL=1.0418
+  Pretrain (Boltzmann β=1.0) epoch 220/1000, NLL=1.0850
+  Pretrain (Boltzmann β=1.0) epoch 225/1000, NLL=0.6017
+  Pretrain (Boltzmann β=1.0) epoch 230/1000, NLL=0.8631
+  Pretrain (Boltzmann β=1.0) epoch 235/1000, NLL=0.7229
+  Pretrain (Boltzmann β=1.0) epoch 240/1000, NLL=0.8591
+  Pretrain (Boltzmann β=1.0) epoch 245/1000, NLL=0.7137
+  Pretrain (Boltzmann β=1.0) epoch 250/1000, NLL=0.6983
+  Pretrain (Boltzmann β=1.0) epoch 255/1000, NLL=0.6505
+  Pretrain (Boltzmann β=1.0) epoch 260/1000, NLL=0.7180
+  Pretrain (Boltzmann β=1.0) epoch 265/1000, NLL=0.6861
+  Pretrain (Boltzmann β=1.0) epoch 270/1000, NLL=0.7535
+  Pretrain (Boltzmann β=1.0) epoch 275/1000, NLL=0.7420
+  Pretrain (Boltzmann β=1.0) epoch 280/1000, NLL=0.4274
+  Pretrain (Boltzmann β=1.0) epoch 285/1000, NLL=0.4369
+  Pretrain (Boltzmann β=1.0) epoch 290/1000, NLL=0.6418
+  Pretrain (Boltzmann β=1.0) epoch 295/1000, NLL=0.5725
+  Pretrain (Boltzmann β=1.0) epoch 300/1000, NLL=0.6583
+  Pretrain (Boltzmann β=1.0) epoch 305/1000, NLL=0.5897
+  Pretrain (Boltzmann β=1.0) epoch 310/1000, NLL=0.5469
+  Pretrain (Boltzmann β=1.0) epoch 315/1000, NLL=0.3256
+  Pretrain (Boltzmann β=1.0) epoch 320/1000, NLL=0.4735
+  Pretrain (Boltzmann β=1.0) epoch 325/1000, NLL=0.4752
+  Pretrain (Boltzmann β=1.0) epoch 330/1000, NLL=0.5068
+  Pretrain (Boltzmann β=1.0) epoch 335/1000, NLL=0.3683
+  Pretrain (Boltzmann β=1.0) epoch 340/1000, NLL=0.6564
+  Pretrain (Boltzmann β=1.0) epoch 345/1000, NLL=0.5798
+  Pretrain (Boltzmann β=1.0) epoch 350/1000, NLL=0.3404
+  Pretrain (Boltzmann β=1.0) epoch 355/1000, NLL=0.3318
+  Pretrain (Boltzmann β=1.0) epoch 360/1000, NLL=0.3236
+  Pretrain (Boltzmann β=1.0) epoch 365/1000, NLL=0.3749
+  Pretrain (Boltzmann β=1.0) epoch 370/1000, NLL=0.4472
+  Pretrain (Boltzmann β=1.0) epoch 375/1000, NLL=0.4657
+  Pretrain (Boltzmann β=1.0) epoch 380/1000, NLL=0.3921
+  Pretrain (Boltzmann β=1.0) epoch 385/1000, NLL=0.5861
+  Pretrain (Boltzmann β=1.0) epoch 390/1000, NLL=0.4485
+  Pretrain (Boltzmann β=1.0) epoch 395/1000, NLL=0.3767
+  Pretrain (Boltzmann β=1.0) epoch 400/1000, NLL=0.4067
+  Pretrain (Boltzmann β=1.0) epoch 405/1000, NLL=0.5157
+  Pretrain (Boltzmann β=1.0) epoch 410/1000, NLL=0.3921
+  Pretrain (Boltzmann β=1.0) epoch 415/1000, NLL=0.4914
+  Pretrain (Boltzmann β=1.0) epoch 420/1000, NLL=0.3770
+  Pretrain (Boltzmann β=1.0) epoch 425/1000, NLL=0.3143
+  Pretrain (Boltzmann β=1.0) epoch 430/1000, NLL=0.2890
+  Pretrain (Boltzmann β=1.0) epoch 435/1000, NLL=0.2521
+  Pretrain (Boltzmann β=1.0) epoch 440/1000, NLL=0.3894
+  Pretrain (Boltzmann β=1.0) epoch 445/1000, NLL=0.5331
+  Pretrain (Boltzmann β=1.0) epoch 450/1000, NLL=0.6115
+  Pretrain (Boltzmann β=1.0) epoch 455/1000, NLL=0.5863
+  Pretrain (Boltzmann β=1.0) epoch 460/1000, NLL=0.4064
+  Pretrain (Boltzmann β=1.0) epoch 465/1000, NLL=0.4116
+  Pretrain (Boltzmann β=1.0) epoch 470/1000, NLL=0.5173
+  Pretrain (Boltzmann β=1.0) epoch 475/1000, NLL=0.2756
+  Pretrain (Boltzmann β=1.0) epoch 480/1000, NLL=0.3579
+  Pretrain (Boltzmann β=1.0) epoch 485/1000, NLL=0.3082
+  Pretrain (Boltzmann β=1.0) epoch 490/1000, NLL=0.2752
+  Pretrain (Boltzmann β=1.0) epoch 495/1000, NLL=0.1444
+  Pretrain (Boltzmann β=1.0) epoch 500/1000, NLL=0.0651
+  Pretrain (Boltzmann β=1.0) epoch 505/1000, NLL=0.1482
+  Pretrain (Boltzmann β=1.0) epoch 510/1000, NLL=0.1847
+  Pretrain (Boltzmann β=1.0) epoch 515/1000, NLL=0.3822
+  Pretrain (Boltzmann β=1.0) epoch 520/1000, NLL=0.1739
+  Pretrain (Boltzmann β=1.0) epoch 525/1000, NLL=0.4265
+  Pretrain (Boltzmann β=1.0) epoch 530/1000, NLL=0.4127
+  Pretrain (Boltzmann β=1.0) epoch 535/1000, NLL=0.3119
+  Pretrain (Boltzmann β=1.0) epoch 540/1000, NLL=0.4774
+  Pretrain (Boltzmann β=1.0) epoch 545/1000, NLL=0.2339
+  Pretrain (Boltzmann β=1.0) epoch 550/1000, NLL=0.3680
+  Pretrain (Boltzmann β=1.0) epoch 555/1000, NLL=0.3936
+  Pretrain (Boltzmann β=1.0) epoch 560/1000, NLL=0.2019
+  Pretrain (Boltzmann β=1.0) epoch 565/1000, NLL=0.2521
+  Pretrain (Boltzmann β=1.0) epoch 570/1000, NLL=0.3480
+  Pretrain (Boltzmann β=1.0) epoch 575/1000, NLL=0.4541
+  Pretrain (Boltzmann β=1.0) epoch 580/1000, NLL=0.3639
+  Pretrain (Boltzmann β=1.0) epoch 585/1000, NLL=0.2539
+  Pretrain (Boltzmann β=1.0) epoch 590/1000, NLL=0.2451
+  Pretrain (Boltzmann β=1.0) epoch 595/1000, NLL=0.1159
+  Pretrain (Boltzmann β=1.0) epoch 600/1000, NLL=0.3035
+  Pretrain (Boltzmann β=1.0) epoch 605/1000, NLL=0.3862
+  Pretrain (Boltzmann β=1.0) epoch 610/1000, NLL=0.2405
+  Pretrain (Boltzmann β=1.0) epoch 615/1000, NLL=0.2678
+  Pretrain (Boltzmann β=1.0) epoch 620/1000, NLL=0.2828
+  Pretrain (Boltzmann β=1.0) epoch 625/1000, NLL=0.2142
+  Pretrain (Boltzmann β=1.0) epoch 630/1000, NLL=0.2694
+  Pretrain (Boltzmann β=1.0) epoch 635/1000, NLL=0.1465
+  Pretrain (Boltzmann β=1.0) epoch 640/1000, NLL=1.4379
+  Pretrain (Boltzmann β=1.0) epoch 645/1000, NLL=0.6289
+  Pretrain (Boltzmann β=1.0) epoch 650/1000, NLL=0.5519
+  Pretrain (Boltzmann β=1.0) epoch 655/1000, NLL=0.8177
+  Pretrain (Boltzmann β=1.0) epoch 660/1000, NLL=0.9208
+  Pretrain (Boltzmann β=1.0) epoch 665/1000, NLL=0.6186
+  Pretrain (Boltzmann β=1.0) epoch 670/1000, NLL=0.6404
+  Pretrain (Boltzmann β=1.0) epoch 675/1000, NLL=0.4187
+  Pretrain (Boltzmann β=1.0) epoch 680/1000, NLL=0.4254
+  Pretrain (Boltzmann β=1.0) epoch 685/1000, NLL=0.2241
+  Pretrain (Boltzmann β=1.0) epoch 690/1000, NLL=0.3065
+  Pretrain (Boltzmann β=1.0) epoch 695/1000, NLL=0.2919
+  Pretrain (Boltzmann β=1.0) epoch 700/1000, NLL=0.0905
+  Pretrain (Boltzmann β=1.0) epoch 705/1000, NLL=0.2961
+  Pretrain (Boltzmann β=1.0) epoch 710/1000, NLL=0.2123
+  Pretrain (Boltzmann β=1.0) epoch 715/1000, NLL=0.3075
+  Pretrain (Boltzmann β=1.0) epoch 720/1000, NLL=0.6933
+  Pretrain (Boltzmann β=1.0) epoch 725/1000, NLL=0.7084
+  Pretrain (Boltzmann β=1.0) epoch 730/1000, NLL=0.4950
+  Pretrain (Boltzmann β=1.0) epoch 735/1000, NLL=1.0630
+  Pretrain (Boltzmann β=1.0) epoch 740/1000, NLL=0.5014
+  Pretrain (Boltzmann β=1.0) epoch 745/1000, NLL=0.6389
+  Pretrain (Boltzmann β=1.0) epoch 750/1000, NLL=0.3191
+  Pretrain (Boltzmann β=1.0) epoch 755/1000, NLL=0.3421
+  Pretrain (Boltzmann β=1.0) epoch 760/1000, NLL=0.3460
+  Pretrain (Boltzmann β=1.0) epoch 765/1000, NLL=0.1962
+  Pretrain (Boltzmann β=1.0) epoch 770/1000, NLL=0.2897
+  Pretrain (Boltzmann β=1.0) epoch 775/1000, NLL=0.2472
+  Pretrain (Boltzmann β=1.0) epoch 780/1000, NLL=0.2158
+  Pretrain (Boltzmann β=1.0) epoch 785/1000, NLL=0.2488
+  Pretrain (Boltzmann β=1.0) epoch 790/1000, NLL=0.1892
+  Pretrain (Boltzmann β=1.0) epoch 795/1000, NLL=0.2821
+  Pretrain (Boltzmann β=1.0) epoch 800/1000, NLL=0.2889
+  Pretrain (Boltzmann β=1.0) epoch 805/1000, NLL=0.3021
+  Pretrain (Boltzmann β=1.0) epoch 810/1000, NLL=0.1735
+  Pretrain (Boltzmann β=1.0) epoch 815/1000, NLL=0.3684
+  Pretrain (Boltzmann β=1.0) epoch 820/1000, NLL=0.3155
+  Pretrain (Boltzmann β=1.0) epoch 825/1000, NLL=0.1915
+  Pretrain (Boltzmann β=1.0) epoch 830/1000, NLL=0.2091
+  Pretrain (Boltzmann β=1.0) epoch 835/1000, NLL=0.1443
+  Pretrain (Boltzmann β=1.0) epoch 840/1000, NLL=0.1908
+  Pretrain (Boltzmann β=1.0) epoch 845/1000, NLL=0.2762
+  Pretrain (Boltzmann β=1.0) epoch 850/1000, NLL=0.2246
+  Pretrain (Boltzmann β=1.0) epoch 855/1000, NLL=0.1344
+  Pretrain (Boltzmann β=1.0) epoch 860/1000, NLL=0.1632
+  Pretrain (Boltzmann β=1.0) epoch 865/1000, NLL=0.2469
+  Pretrain (Boltzmann β=1.0) epoch 870/1000, NLL=0.1216
+  Pretrain (Boltzmann β=1.0) epoch 875/1000, NLL=0.2110
+  Pretrain (Boltzmann β=1.0) epoch 880/1000, NLL=0.2667
+  Pretrain (Boltzmann β=1.0) epoch 885/1000, NLL=0.2997
+  Pretrain (Boltzmann β=1.0) epoch 890/1000, NLL=0.2727
+  Pretrain (Boltzmann β=1.0) epoch 895/1000, NLL=0.1567
+  Pretrain (Boltzmann β=1.0) epoch 900/1000, NLL=0.2574
+  Pretrain (Boltzmann β=1.0) epoch 905/1000, NLL=0.2746
+  Pretrain (Boltzmann β=1.0) epoch 910/1000, NLL=0.0973
+  Pretrain (Boltzmann β=1.0) epoch 915/1000, NLL=0.1497
+  Pretrain (Boltzmann β=1.0) epoch 920/1000, NLL=0.0697
+  Pretrain (Boltzmann β=1.0) epoch 925/1000, NLL=0.3036
+  Pretrain (Boltzmann β=1.0) epoch 930/1000, NLL=0.1583
+  Pretrain (Boltzmann β=1.0) epoch 935/1000, NLL=0.1633
+  Pretrain (Boltzmann β=1.0) epoch 940/1000, NLL=0.1785
+  Pretrain (Boltzmann β=1.0) epoch 945/1000, NLL=0.0583
+  Pretrain (Boltzmann β=1.0) epoch 950/1000, NLL=0.3787
+  Pretrain (Boltzmann β=1.0) epoch 955/1000, NLL=0.9946
+  Pretrain (Boltzmann β=1.0) epoch 960/1000, NLL=0.8567
+  Pretrain (Boltzmann β=1.0) epoch 965/1000, NLL=0.7121
+  Pretrain (Boltzmann β=1.0) epoch 970/1000, NLL=1.0860
+  Pretrain (Boltzmann β=1.0) epoch 975/1000, NLL=0.7249
+  Pretrain (Boltzmann β=1.0) epoch 980/1000, NLL=0.7320
+  Pretrain (Boltzmann β=1.0) epoch 985/1000, NLL=0.3881
+  Pretrain (Boltzmann β=1.0) epoch 990/1000, NLL=0.5083
+  Pretrain (Boltzmann β=1.0) epoch 995/1000, NLL=0.3023
+
+============================================================
+Step 2: PPO Training (RL fine-tuning)...
+============================================================
+  PPO iter 20/1000: mean_r=-8.56, best_r=-0.01, kl=0.8137, lr=3.00e-04
+  PPO iter 40/1000: mean_r=-7.81, best_r=-0.01, kl=0.8928, lr=3.00e-04
+  PPO iter 60/1000: mean_r=-6.32, best_r=-0.00, kl=1.0679, lr=3.00e-04
+  PPO iter 80/1000: mean_r=-5.22, best_r=-0.02, kl=1.1968, lr=3.00e-04
+  PPO iter 100/1000: mean_r=-4.53, best_r=-0.00, kl=1.4246, lr=3.00e-04
+  PPO iter 120/1000: mean_r=-3.68, best_r=-0.00, kl=1.7930, lr=3.00e-04
+  PPO iter 140/1000: mean_r=-3.52, best_r=-0.00, kl=1.2114, lr=3.00e-04
+  PPO iter 160/1000: mean_r=-2.59, best_r=-0.00, kl=1.3913, lr=3.00e-04
+  PPO iter 180/1000: mean_r=-2.77, best_r=-0.00, kl=1.5530, lr=3.00e-04
+  PPO iter 200/1000: mean_r=-2.56, best_r=-0.00, kl=0.6180, lr=3.00e-04
+  PPO iter 220/1000: mean_r=-3.15, best_r=-0.00, kl=-0.3363, lr=3.00e-04
+  PPO iter 240/1000: mean_r=-3.83, best_r=-0.01, kl=1.3082, lr=3.00e-04
+  PPO iter 260/1000: mean_r=-3.28, best_r=-0.02, kl=1.5539, lr=3.00e-04
+  PPO iter 280/1000: mean_r=-2.49, best_r=-0.00, kl=1.9665, lr=3.00e-04
+  PPO iter 300/1000: mean_r=-1.95, best_r=-0.00, kl=1.8694, lr=3.00e-04
+  PPO iter 320/1000: mean_r=-2.23, best_r=-0.01, kl=1.9304, lr=3.00e-04
+  PPO iter 340/1000: mean_r=-1.93, best_r=-0.01, kl=1.5974, lr=3.00e-04
+  PPO iter 360/1000: mean_r=-2.00, best_r=-0.01, kl=1.6695, lr=3.00e-04
+  PPO iter 380/1000: mean_r=-1.78, best_r=-0.01, kl=1.8762, lr=3.00e-04
+  PPO iter 400/1000: mean_r=-1.79, best_r=-0.00, kl=0.9121, lr=3.00e-04
+  PPO iter 420/1000: mean_r=-1.46, best_r=-0.00, kl=2.4030, lr=3.00e-04
+  PPO iter 440/1000: mean_r=-2.47, best_r=-0.00, kl=2.1255, lr=3.00e-04
+  PPO iter 460/1000: mean_r=-1.88, best_r=-0.00, kl=-0.2456, lr=3.00e-04
+  PPO iter 480/1000: mean_r=-1.60, best_r=-0.00, kl=2.6228, lr=3.00e-04
+  PPO iter 500/1000: mean_r=-1.91, best_r=-0.00, kl=0.5687, lr=3.00e-04
+  PPO iter 520/1000: mean_r=-1.96, best_r=-0.00, kl=-0.6995, lr=3.00e-04
+  PPO iter 540/1000: mean_r=-2.31, best_r=-0.14, kl=2.1043, lr=3.00e-04
+  PPO iter 560/1000: mean_r=-2.38, best_r=-0.02, kl=2.8548, lr=3.00e-04
+  PPO iter 580/1000: mean_r=-1.88, best_r=-0.03, kl=2.9857, lr=3.00e-04
+  PPO iter 600/1000: mean_r=-2.71, best_r=-0.02, kl=3.3201, lr=3.00e-04
+  PPO iter 620/1000: mean_r=-1.85, best_r=-0.00, kl=1.8891, lr=3.00e-04
+  PPO iter 640/1000: mean_r=-1.86, best_r=-0.02, kl=1.6364, lr=3.00e-04
+  PPO iter 660/1000: mean_r=-1.18, best_r=-0.00, kl=1.8502, lr=3.00e-04
+  PPO iter 680/1000: mean_r=-1.29, best_r=-0.04, kl=1.4455, lr=3.00e-04
+  PPO iter 700/1000: mean_r=-2.39, best_r=-0.00, kl=2.8695, lr=3.00e-04
+  PPO iter 720/1000: mean_r=-1.60, best_r=-0.00, kl=3.2642, lr=3.00e-04
+  PPO iter 740/1000: mean_r=-1.53, best_r=-0.06, kl=3.5202, lr=3.00e-04
+  PPO iter 760/1000: mean_r=-2.17, best_r=-0.03, kl=2.4869, lr=3.00e-04
+  PPO iter 780/1000: mean_r=-1.44, best_r=-0.00, kl=1.4171, lr=3.00e-04
+  PPO iter 800/1000: mean_r=-1.97, best_r=-0.00, kl=3.9007, lr=3.00e-04
+  PPO iter 820/1000: mean_r=-1.49, best_r=-0.00, kl=1.8100, lr=3.00e-04
+  PPO iter 840/1000: mean_r=-1.20, best_r=-0.00, kl=2.0707, lr=3.00e-04
+  PPO iter 860/1000: mean_r=-0.64, best_r=-0.00, kl=2.6214, lr=3.00e-04
+  PPO iter 880/1000: mean_r=-0.52, best_r=-0.00, kl=2.6722, lr=3.00e-04
+  PPO iter 900/1000: mean_r=-0.60, best_r=-0.00, kl=2.8667, lr=3.00e-04
+  PPO iter 920/1000: mean_r=-0.35, best_r=-0.00, kl=3.1184, lr=3.00e-04
+  PPO iter 940/1000: mean_r=-0.45, best_r=-0.00, kl=1.2136, lr=3.00e-04
+  PPO iter 960/1000: mean_r=-0.43, best_r=-0.00, kl=-0.7379, lr=3.00e-04
+  PPO iter 980/1000: mean_r=-0.48, best_r=-0.04, kl=1.0787, lr=3.00e-04
+  PPO iter 1000/1000: mean_r=-0.92, best_r=-0.18, kl=3.3246, lr=3.00e-04
+  Restored best model (mean_r=-0.2572)
+
+============================================================
+Step 3: CMA-ES Direct Optimization...
+============================================================
+  CMA-ES evals=7/51200: global_best_r=-20.4578, restarts=1
+  CMA-ES evals=5005/51200: global_best_r=-0.9950, restarts=9
+  CMA-ES evals=10003/51200: global_best_r=-0.0000, restarts=17
+  CMA-ES evals=10009/51200: global_best_r=-0.0000, restarts=17
+  CMA-ES evals=15001/51200: global_best_r=-0.0000, restarts=25
+  CMA-ES evals=15007/51200: global_best_r=-0.0000, restarts=25
+  CMA-ES evals=20005/51200: global_best_r=-0.0000, restarts=33
+  CMA-ES evals=25003/51200: global_best_r=-0.0000, restarts=41
+  CMA-ES evals=25009/51200: global_best_r=-0.0000, restarts=41
+  CMA-ES evals=30001/51200: global_best_r=-0.0000, restarts=49
+  CMA-ES evals=30007/51200: global_best_r=-0.0000, restarts=49
+  CMA-ES evals=35005/51200: global_best_r=-0.0000, restarts=57
+  CMA-ES evals=40003/51200: global_best_r=-0.0000, restarts=65
+  CMA-ES evals=40009/51200: global_best_r=-0.0000, restarts=65
+  CMA-ES evals=45001/51200: global_best_r=-0.0000, restarts=73
+  CMA-ES evals=45007/51200: global_best_r=-0.0000, restarts=73
+  CMA-ES evals=50005/51200: global_best_r=-0.0000, restarts=81
+  CMA-ES done: best_r=-0.0000, total_evals=51205
+
+============================================================
+Step 4: Computing PCA directions + Trajectory FIM...
+============================================================
+  PCA directions: d1=start→end, d2=max orthogonal variance
+  Explained variance: d1=0.6413, d2=0.1773, total=0.8186
+  θ_0 at (0, 0), θ_T at (2.9926, -0.0000)
+
+  Computing trajectory FIM (201 points)...
+    Trajectory FIM: 20/1001 done, F11=12.8537, F22=13.7901
+    Trajectory FIM: 40/1001 done, F11=16.9462, F22=23.1702
+    Trajectory FIM: 60/1001 done, F11=21.2474, F22=32.8876
+    Trajectory FIM: 80/1001 done, F11=33.7562, F22=60.2712
+    Trajectory FIM: 100/1001 done, F11=65.8464, F22=84.6911
+    Trajectory FIM: 120/1001 done, F11=36.6826, F22=52.8123
+    Trajectory FIM: 140/1001 done, F11=26.9337, F22=48.7976
+    Trajectory FIM: 160/1001 done, F11=26.6640, F22=31.9787
+    Trajectory FIM: 180/1001 done, F11=28.6080, F22=57.2069
+    Trajectory FIM: 200/1001 done, F11=20.7709, F22=40.4334
+    Trajectory FIM: 220/1001 done, F11=17.1154, F22=42.3294
+    Trajectory FIM: 240/1001 done, F11=9.6088, F22=33.2666
+    Trajectory FIM: 260/1001 done, F11=14.2910, F22=26.1484
+    Trajectory FIM: 280/1001 done, F11=13.4701, F22=18.6765
+    Trajectory FIM: 300/1001 done, F11=10.4820, F22=24.2186
+    Trajectory FIM: 320/1001 done, F11=4.3382, F22=14.0697
+    Trajectory FIM: 340/1001 done, F11=12.0184, F22=25.4104
+    Trajectory FIM: 360/1001 done, F11=11.7688, F22=17.0435
+    Trajectory FIM: 380/1001 done, F11=4.9632, F22=13.5952
+    Trajectory FIM: 400/1001 done, F11=8.6959, F22=19.1273
+    Trajectory FIM: 420/1001 done, F11=8.1969, F22=21.5190
+    Trajectory FIM: 440/1001 done, F11=15.5324, F22=19.6801
+    Trajectory FIM: 460/1001 done, F11=28.2263, F22=30.6742
+    Trajectory FIM: 480/1001 done, F11=22.2650, F22=16.2058
+    Trajectory FIM: 500/1001 done, F11=18.8763, F22=20.5814
+    Trajectory FIM: 520/1001 done, F11=16.0752, F22=16.2068
+    Trajectory FIM: 540/1001 done, F11=12.9982, F22=14.1653
+    Trajectory FIM: 560/1001 done, F11=10.0374, F22=11.0755
+    Trajectory FIM: 580/1001 done, F11=18.9495, F22=22.9535
+    Trajectory FIM: 600/1001 done, F11=31.1398, F22=27.5409
+    Trajectory FIM: 620/1001 done, F11=22.0545, F22=18.4821
+    Trajectory FIM: 640/1001 done, F11=28.3368, F22=22.6525
+    Trajectory FIM: 660/1001 done, F11=19.6634, F22=16.9489
+    Trajectory FIM: 680/1001 done, F11=41.8916, F22=28.4315
+    Trajectory FIM: 700/1001 done, F11=50.5353, F22=43.3853
+    Trajectory FIM: 720/1001 done, F11=34.6565, F22=34.6298
+    Trajectory FIM: 740/1001 done, F11=79.2990, F22=79.4380
+    Trajectory FIM: 760/1001 done, F11=73.8778, F22=78.4081
+    Trajectory FIM: 780/1001 done, F11=40.4632, F22=43.8415
+    Trajectory FIM: 800/1001 done, F11=19.0385, F22=35.3907
+    Trajectory FIM: 820/1001 done, F11=26.0209, F22=40.3184
+    Trajectory FIM: 840/1001 done, F11=51.7307, F22=80.8265
+    Trajectory FIM: 860/1001 done, F11=67.6188, F22=99.0080
+    Trajectory FIM: 880/1001 done, F11=14.4322, F22=33.2407
+    Trajectory FIM: 900/1001 done, F11=21.7253, F22=29.9790
+    Trajectory FIM: 920/1001 done, F11=11.3750, F22=13.0092
+    Trajectory FIM: 940/1001 done, F11=39.3198, F22=41.6762
+    Trajectory FIM: 960/1001 done, F11=62.4997, F22=21.0896
+    Trajectory FIM: 980/1001 done, F11=80.3919, F22=8.6397
+    Trajectory FIM: 1000/1001 done, F11=45.6404, F22=15.6557
+    Trajectory FIM: 1001/1001 done, F11=50.8711, F22=23.6440
+    F11 range: [3.7588, 95.9932]
+    F22 range: [4.3430, 141.3188]
+    Total KL arc length: 148.6332
+    Total Euclidean arc length: 15.3576
+
+  Scanning 2D grid (--scan enabled)...
+  Scanning 21x21 = 441 grid points for J(theta)...
+    J column 10/21 done
+    J column 20/21 done
+  Computing full 2D FIM field at 21x21 points (100 samples/point, trimmed mean with trim=0.1)...
+    FIM column 5/21 done (105/441)
+    FIM column 10/21 done (210/441)
+    FIM column 15/21 done (315/441)
+    FIM column 20/21 done (420/441)
+    F11 range: [1.499422, 188.625091]
+    F22 range: [0.638791, 824.691000]
+    F11 ratio (max/min): 125.80
+    F22 ratio (max/min): 1291.02
+    KL-alpha range: [-6.6843, 12.1754]
+    KL-beta  range: [-10.6726, 4.7663]
+  Scanning J(theta) on uniform KL grid (21x21)...
+    KL-J column 10/21 done
+    KL-J column 20/21 done
+
+============================================================
+Step 5: Generating visualizations...
+============================================================
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig1_landscape.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig2_trajectory.gif
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig3_convergence.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig4_landscape_3d.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig5_dataset.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig6_distributions.png
+    Computing log π for 1001 snapshots...
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig7_distribution_evolution.gif
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig8_fim_evolution.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig9_step_comparison.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig10_kl_efficiency.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig11_trajectory_ellipses.png
+  Saved: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow/fig12_theorem1.png
+
+============================================================
+Results (2D Rastrigin, FlowModel affine):
+  PPO final mean reward:   -0.9164
+  PPO best reward:         -0.0000  (first at iter 887, evals=227072)
+  CMA-ES best reward:      -0.0000  (first at evals=6433)
+  Outputs saved to: /opt/data/bcmdata/ZONES/home/PROJECTS/homefile/PRIVATE/milksang/RL_smoothen/toy_model/output/flow
+============================================================
+==== Job finished at Mon Apr 20 23:18:49 CST 2026 ====

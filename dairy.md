@@ -132,7 +132,30 @@ And I verified the theorem I proved.
 And we also do the $\beta = 1.0$ case
 
 ## $\beta = 1.0$
+![fig4](images/beta1_landscape_3d.png)
 
+The pretrain loss is shown as follows:
+![fig5](images/beta1_pretrain_loss.png)
+
+There is a weird platform at the beginning of the training. This may be contributed by a bad initiation and absence of warm up. The platform is actually a part of the entropy of Standard Gussian Distribution. (Using the dataset to calculate).
+
+The aim distribution shown as follows:
+
+![fig6](images/fig_boltzmann_logp_beta1.0.png)
+
+While after the model is pretrained, the distribution is:
+![fig7](images/beta1_distributions.png)
+
+And we have to do 500 PPO iters to make the distribution collapse to the origin point (without KL divergence):
+![gif4](images/beta1_distribution_evolution.gif)
+
+![gif5](images/beta1_trajectory.gif)
+
+The theorem is still solid:
+![fig8](images/beta1_theorem1.png)
+
+# 2026.4.22
+Realize unit test of my code. My RealNVP has no problem.
 
 
 # 2026.4.24

@@ -28,7 +28,7 @@ We get a dimensionless (scaling free) view of the parameter space.
 
 The first version code (toy model) of the idea above is realized. Using PPO to rl a mlp. The aim is to generate better x s.t. Rastrigin function get minimized.
 
-$$f(x)= A \cdot d + \sum_{i=1}^d (x^2_i-A\cos(2\pi x_i))$$
+$$E(x)= A \cdot d + \sum_{i=1}^d (x^2_i-A\cos(2\pi x_i))$$
 
 Our toy model sets $A=10, d=2$
 
@@ -69,11 +69,56 @@ Still, we sampled independent $(x_i,z_i)$ where $x_i\sim {\rm Uni}[-5,5]^2$ to t
 
 ![fig1](images/gmm_landscape_3d.png)
 
+But actually one can see that the model can't be trained as a perfect uniform distribution because we only trained by a upper bound. And the ppo iters =200. RL slowly convert the distribution to a distribution concentrate on the orgin. 
+![gif1](images/gmm_trajectory.gif)
+
 # 2026.4.20
 Change the base model to Normalizing Flow Model, using RealNVP to realize it.
 
+In a base model, it directly change a vector $z\sim N(0,\sigma^2 I)$ to a vector $x$, while the map is invertable. $x=f(z)$, then
+
+$$p_\theta (x)= \left|\frac{\partial z}{\partial x}\right| p(z) = \left|\frac{\partial f^{-1}_\theta (x)}{\partial x}\right| p(z)$$
+
+where $f_\theta(x)$ is a learnable network. And to make the determinant tractable, we can design the network to satisfy this. RealNVP is an example.
+
+Divide $y$ vector in two parts, $y_{\rm var}$ and $y_{\rm fix}$
+
+$$\begin{cases}y^{(\tau + 1)}_{\rm fix}= y^{(\tau)}_{\rm fix} \\\\ y^{(\tau + 1)}_{\rm var}=e^{s_\theta(y^{(\tau)}_{\rm fix})}\cdot y^{(\tau)}_{\rm var} + t_\theta(y^{(\tau)}_{\rm fix})\end{cases}$$
+
+in 2D case, we choose $x_1$ or $x_2$ be fixed decided by in even or odd layer.
+
+We use many layers combining together to get RealNVP network.
+
+$$f_\theta(z)=f^{(N)}_{\theta_N}(...(f^{(2)}_{\theta_2}(f^{(1)}_{\theta_1}(z)))...)$$
+
+it's actally a linear transformation.
+
+for each layer:
+
+$$\left|\frac{f^{(\tau)}_{\theta_\tau}(y)}{\partial y} \right|=\left|\begin{matrix} 1 & 0 \\\\ t & e^s\end{matrix} \right| = e^{s^{(\tau)}_{\theta_\tau}(y^{(\tau)}_{\rm fix})}$$
+
+then ($y^{(1)}=z, y^{(N)}=x $)
+
+$$\left| \frac{\partial f^{-1}_ \theta (x)}{\partial x} \right| = \exp\Big(-\sum_{\tau =1}^N s^{(\tau)}_{\theta_\tau}(y_{\rm fix}^{(\tau)})\Big)$$
+
+then the training process needs:
+
+$$L = -\sum_{i\in D} \log p_\theta(x_i) = \sum_{i\in D}\sum_{\tau =1}^N s^{(\tau)}_{\theta_\tau}(y_{\rm fix}^{(\tau)}(x_i))-\log p(z(x_i))$$
+
+while the z and y are calculated by the invert transformation of each layer, these layers includes paramaters $\theta$. So actually we need use invert networks to realize the Automatic Differentiation.
+
+In this case, I can train the model on two datasets($\beta = 0,1$):
+
+$$p_{\rm data}(x)\propto e^{-\beta E(x)}$$
+
+because of $E(x)\geq 0 $, so $e^{-\beta E(x)}\leq 1$. We can use Rejection Sampling to sample from $p_{\rm data}(x)$.
+
+Generates a data from Uniform distribution of $[-5,5]^2$ and we use the accept rate $\alpha(x) = e^{-\beta E(x)}$ to accept the $x$ or not.
+
+## $\beta = 0$
 
 
 
 # 2026.4.24
+
 

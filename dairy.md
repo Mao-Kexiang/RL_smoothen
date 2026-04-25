@@ -117,8 +117,28 @@ Generates a data from Uniform distribution of $[-5,5]^2$ and we use the accept r
 
 ## $\beta = 0$
 
+![fig2](images/uniform_landscape_3d.png)
+We can see how $\theta$ moves with PPO on the Reward landscape $J(\theta) = E_{\pi_\theta(x)}(r(x))$. And the third picture zooms in the FIM vision.
+
+![gif2](images/uniform_trajectory.gif)
+
+We can see the evolution of the samples sampled by the model in different PPO iters( Start from pretrained base model).
+
+![gif3](images/uniform_distribution_evolution.gif)
+
+And I verified the theorem I proved.
+![fig3](images/uniform_theorem1.png)
+
+And we also do the $\beta = 1.0$ case
+
+## $\beta = 1.0$
+
 
 
 # 2026.4.24
 
+learning rate too big
 
+(s,t) -> s,t
+
+kaiming initiation

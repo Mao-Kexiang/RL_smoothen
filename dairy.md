@@ -156,7 +156,7 @@ The theorem is still solid:
 
 # 2026.4.22
 Realize unit test of my code. My RealNVP has no problem.
-
+![fig9](images/unit_test.png)
 
 # 2026.4.24
 

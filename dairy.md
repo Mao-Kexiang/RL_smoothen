@@ -154,9 +154,30 @@ And we have to do 500 PPO iters to make the distribution collapse to the origin 
 The theorem is still solid:
 ![fig8](images/beta1_theorem1.png)
 
+However the distribution of base model $log \pi_\theta(x)$ is so weird compared to origin $\log p_{\rm data}(x) = -E(x)$, it seems that Flow model fails to learn the dataset totally. And the RL really slow and seems not good.
+
 # 2026.4.22
 Realize unit test of my code. My RealNVP has no problem.
 ![fig9](images/unit_test.png)
+
+And I tried the code of https://code.itp.ac.cn/lishuohui/RealNVPplayground
+
+The code use RealNVP to imitate the target distribution $\pi_\theta(x)\to p(x)$, and use $q(x|x')=\pi_\theta(x)$ to propose a new sample.
+
+$$A(x\to x')=\min \\{1,\frac{p(x')\pi_\theta(x)}{p(x)\pi_\theta(x')}\\}$$ 
+
+And if $\pi_\theta(x)=p(x)$, then the accept rate is 100%, which really accelerates the mcmc a lot.
+
+Overall, the idea is using nerual networks to propose. For calculating of accept rate, we have to know the exact $log \pi_\theta(x)$, which means the model should give a score. Normalization Flow Model can do this.
+
+However the effect of the toy model in Shuohui's code disappoints me. Actually, the code aims to accelerate mcmc, so a $\pi_\theta(x)$ makes $A(x\to x')>0.5$ some how is good enough. But actually in my view, Normalize Flow model should be much more accurate in this kind of easy 2D toy model.
+
+$$E(x,y)= (\sqrt{x^2+y^2} - 2)^2/0.32 $$
+
+The $p(x)=e^{-E(x)}$ should be a ring, and samples at last should roughly be a ring. However the Flow model fails even in this easy case.
+
+The acc rate from about $0.26$ rices to $0.55$. (0.26 referce to $q(x)\sim N(0,I_2)$ case). 
+
 
 # 2026.4.24
 

@@ -176,8 +176,15 @@ $$E(x,y)= (\sqrt{x^2+y^2} - 2)^2/0.32 $$
 
 The $p(x)=e^{-E(x)}$ should be a ring, and samples at last should roughly be a ring. However the Flow model fails even in this easy case.
 
+ring2d_Nl4_Hs10_Ht10_epsilon1.0_beta1.0_delta1.0_omega1.0_Batchsize64_Ntherm10_Nsteps10_Nskips10_lr0.001 training 5000 epochs:
 The acc rate from about $0.26$ rices to $0.55$. (0.26 referce to $q(x)\sim N(0,I_2)$ case). 
 
+The pretrained RealNVP only gives that:
+![fig10](images/epoch4990.png)
+
+It is still nothing but a "Guassian distribution" . Maybe just a scale. It just a Unimodal function.
+
+There must be something not good enough for this is a code progammed at 8 years ago.
 
 # 2026.4.24
 

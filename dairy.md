@@ -192,18 +192,33 @@ Compare my code and Shuohui's code, our difference is:
 > 1. Activate Function: ReLU(mine) / ELU(his)
 > 2. s,t network: One network outputs s and t(mine)/ seperates into two networks(his)
 > 3. mlp sturcture: 1->64->64->2(mine)/ 2->10->1(his)
-> 4. Initiation: Kaiming Initiation(mine)/ $N(0, 0.01)$ (his)
+> 4. Initiation:  Kaiming Initiation(mine)/ $N(0, 0.01)$ (his)
 > 5. clamp: s.clamp(-2,2) to avoid extreme scale of vectors(mine)/ none(his)
 
 After the success of unit test, I believe that my network should behave better than Shuohui's network.
 
 Maybe, I can use my settings in the Shuohui's code, then:
 
+![fig11](images/epoch4990_my.png)
+
+And the acc rate goes up to 0.8076, which is much higher than the origin settings.
+
+I have changed his 1,2,4,5 settings into my settings. (which means the networks is still 2->10->1)
+
+the clamp(-2,2) is important. If doesn't use this constriant, the distribution will go wild.
+
+![fig11](images/epoch4990_kaiming.png)
+
+This refers that: 1. $N(0, 0.01)$ makes the traning to slow, for the gradients are too small; 2. $s.clamp(-2,2)$ helps control the RealNVP not give a extreme stretching, helps the distribution be stable.
+
+And I split my network into two (s,t) -> s,t.
 
 # 2026.4.24
+
+My network has its own problem. Maybe the parameters are too many, which makes the training dynamics is unstable. A can notice many crazy increases of NLL when training. This might refer to a unsuitable learning rates. (Reminds the situation that y=ax^2/2 has a learning rate bigger than 2/a).
+
+So first I tried to split the neutwork and use learning rate that $\eta = 10^{-5}$, while the origin one is $10^{-3}$.
 
 learning rate too big
 
 (s,t) -> s,t
-
-kaiming initiation

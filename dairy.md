@@ -186,6 +186,20 @@ It is still nothing but a "Guassian distribution" . Maybe just a scale. It just 
 
 There must be something not good enough for this is a code progammed at 8 years ago.
 
+# 2026.4.23
+Compare my code and Shuohui's code, our difference is:
+
+> 1. Activate Function: ReLU(mine) / ELU(his)
+> 2. s,t network: One network outputs s and t(mine)/ seperates into two networks(his)
+> 3. mlp sturcture: 1->64->64->2(mine)/ 2->10->1(his)
+> 4. Initiation: Kaiming Initiation(mine)/ $N(0, 0.01)$ (his)
+> 5. clamp: s.clamp(-2,2) to avoid extreme scale of vectors(mine)/ none(his)
+
+After the success of unit test, I believe that my network should behave better than Shuohui's network.
+
+Maybe, I can use my settings in the Shuohui's code, then:
+
+
 # 2026.4.24
 
 learning rate too big

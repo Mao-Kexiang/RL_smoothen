@@ -211,7 +211,7 @@ the clamp(-2,2) is important. If doesn't use this constriant, the distribution w
 
 This refers that: 1. $N(0, 0.01)$ makes the traning to slow, for the gradients are too small; 2. $s.clamp(-2,2)$ helps control the RealNVP not give a extreme stretching, helps the distribution be stable.
 
-And I split my network into two (s,t) -> s,t.
+And I split my network into two networks: (s,t) -> s,t.
 
 # 2026.4.24
 
@@ -219,6 +219,7 @@ My network has its own problem. Maybe the parameters are too many, which makes t
 
 So first I tried to split the neutwork and use learning rate that $\eta = 10^{-5}$, while the origin one is $10^{-3}$.
 
-learning rate too big
+And my advisor prompts me that PPO rewards the Q-V>0 samples and inhibits the Q-V<0 samples. So maybe the ineffeciency PPO might be caused by the PPO batch is too small. I increase it from 256 to 1024. And turn the $\sigma$ of the initial distribution learnable:
 
-(s,t) -> s,t
+
+

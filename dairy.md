@@ -191,7 +191,7 @@ Compare my code and Shuohui's code, our difference is:
 
 > 1. Activate Function: ReLU(mine) / ELU(his)
 > 2. s,t network: One network outputs s and t(mine)/ seperates into two networks(his)
-> 3. mlp sturcture: 1->64->64->2(mine)/ 2->10->1(his)
+> 3. mlp sturcture: 1->64->64->2(mine)/ 2->10->10->1(his)
 > 4. Initiation:  Kaiming Initiation(mine)/ $N(0, 0.01)$ (his)
 > 5. clamp: s.clamp(-2,2) to avoid extreme scale of vectors(mine)/ none(his)
 
@@ -203,11 +203,11 @@ Maybe, I can use my settings in the Shuohui's code, then:
 
 And the acc rate goes up to 0.8076, which is much higher than the origin settings.
 
-I have changed his 1,2,4,5 settings into my settings. (which means the networks is still 2->10->1)
+I have changed his 1,2,4,5 settings into my settings. (which means the networks is still 2->10->10->1)
 
 the clamp(-2,2) is important. If doesn't use this constriant, the distribution will go wild.
 
-![fig11](images/epoch4990_kaiming.png)
+![fig12](images/epoch4990_kaiming.png)
 
 This refers that: 1. $N(0, 0.01)$ makes the traning to slow, for the gradients are too small; 2. $s.clamp(-2,2)$ helps control the RealNVP not give a extreme stretching, helps the distribution be stable.
 
@@ -221,5 +221,17 @@ So first I tried to split the neutwork and use learning rate that $\eta = 10^{-5
 
 And my advisor prompts me that PPO rewards the Q-V>0 samples and inhibits the Q-V<0 samples. So maybe the ineffeciency PPO might be caused by the PPO batch is too small. I increase it from 256 to 1024. And turn the $\sigma$ of the initial distribution learnable:
 
+The pretrain loss goes:(100000epochs)
+![fig13](images/flexible_pretrain_loss.png)
+
+And the pretrain RealNVP gives the distribution:
+![fig14](images/flexible_distributions.png)
+
+The PPO precess:
+![gif6](images/flexible_distribution_evolution.gif)
+
+# 2026.4.27
+I doubt that the strange distribution and unstable training process might blame on to many parameters. And I change the hidden dimension to 8. which makes parameters from 47k ro 2.5k.
+And also add Data Augmentation to makes the training dataset satisfies  $C_{4v}$ sysmmetry. And I change the learning rate to $5\times 10^{-5}$.
 
 

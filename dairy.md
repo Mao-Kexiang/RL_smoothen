@@ -241,6 +241,7 @@ This shows that affine RealNVP reaches its limitation.
 
 Though the log pi figure seems bad. If we draw the $\pi_\theta(x)$ pictrures, we get:
 
+![gif8](images/pretrain_prob.gif)
 
 # 2026.4.28
 spline

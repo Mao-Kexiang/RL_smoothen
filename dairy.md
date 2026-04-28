@@ -235,3 +235,5 @@ I doubt that the strange distribution and unstable training process might blame 
 And also add Data Augmentation to makes the training dataset satisfies  $C_{4v}$ sysmmetry. And I change the learning rate to $5\times 10^{-5}$.
 
 
+
+

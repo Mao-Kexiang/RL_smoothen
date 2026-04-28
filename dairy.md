@@ -234,6 +234,7 @@ The PPO precess:
 I doubt that the strange distribution and unstable training process might blame on to many parameters. And I change the hidden dimension to 8. which makes parameters from 47k ro 2.5k.
 And also add Data Augmentation to makes the training dataset satisfies  $C_{4v}$ sysmmetry. And I change the learning rate to $5\times 10^{-5}$.
 
-
+And the pretraining process we have:
+![gif7](images/pretrain_log_prob.gif)
 
 

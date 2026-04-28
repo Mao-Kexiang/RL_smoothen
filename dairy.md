@@ -237,4 +237,10 @@ And also add Data Augmentation to makes the training dataset satisfies  $C_{4v}$
 And the pretraining process we have:
 ![gif7](images/pretrain_log_prob.gif)
 
+This shows that affine RealNVP reaches its limitation. 
 
+Though the log pi figure seems bad. If we draw the $\pi_\theta(x)$ pictrures, we get:
+
+
+# 2026.4.28
+spline

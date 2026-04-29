@@ -246,6 +246,8 @@ Though the log pi figure seems bad. If we draw the $\pi_\theta(x)$ pictrures, we
 The dataset distribution is:
 ![fig15](images/fig14_data_distribution_prob.png)
 
+And the PPO failed to RL the distribution in 500 iters.
+
 # 2026.4.28
 The RealNVP somehow is too limited by its mathematical structure. If we use Neural Spline Flows, where rational-quadratic functions are used to realize the layer transform (https://arxiv.org/abs/1906.04032). This sturcture can usually fits many peaks functions. I set $B=5,K=8$. 
 
@@ -254,5 +256,11 @@ The RealNVP somehow is too limited by its mathematical structure. If we use Neur
 Then the training loss:
 ![fig16](images/spline_pretrain_loss.png)
 
+While pretraining, the distribution of $\pi_\theta(x)$ goes:
+![gif9](images/spline_pretrain_prob.gif)
+
 And the PPO iters makes the distribution becomes:
-![gif9](images/spline_distribution_evolution.gif)
+![gif10](images/spline_distribution_evolution.gif)
+
+The $J(\theta)$ changes in the RL process shown as bellow:
+![fig17](images/spline_landscape_3d.png)

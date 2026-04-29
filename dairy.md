@@ -232,7 +232,7 @@ The PPO precess:
 
 # 2026.4.27
 I doubt that the strange distribution and unstable training process might blame on to many parameters. And I change the hidden dimension to 8. which makes parameters from 47k ro 2.5k.
-And also add Data Augmentation to makes the training dataset satisfies  $C_{4v}$ sysmmetry. And I change the learning rate to $5\times 10^{-5}$.
+And also add Data Augmentation to makes the training dataset satisfies  $C_{4v}$ sysmmetry. And I change the learning rate to $5\times 10^{-5}$. 
 
 And the pretraining process we have:
 ![gif7](images/pretrain_log_prob.gif)
@@ -243,5 +243,13 @@ Though the log pi figure seems bad. If we draw the $\pi_\theta(x)$ pictrures, we
 
 ![gif8](images/pretrain_prob.gif)
 
+The dataset distribution is:
+![fig15](images/fig14_data_distribution_prob.png)
+
 # 2026.4.28
-spline
+The RealNVP somehow is too limited by its mathematical structure. If we use Neural Spline Flows, where rational-quadratic functions are used to realize the layer transform (https://arxiv.org/abs/1906.04032). This sturcture can usually fits many peaks functions. I set $B=5,K=8$. 
+
+> python -u exp_2d/model.py --pretrain boltzmann --beta 1.0 --hidden_dim 8 --ppo_kl 0.0 --ppo_iters 500 --ppo_batch 2048 --dataset_size 200000 --init kaiming --n_layers 8 --pretrain_epochs 50000 --pretrain_lr 5e-5  --pretrain_batch 2048 --warmup_epochs 0 --scan --coupling spline
+
+Then the training loss:
+

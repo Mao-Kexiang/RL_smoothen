@@ -252,4 +252,7 @@ The RealNVP somehow is too limited by its mathematical structure. If we use Neur
 > python -u exp_2d/model.py --pretrain boltzmann --beta 1.0 --hidden_dim 8 --ppo_kl 0.0 --ppo_iters 500 --ppo_batch 2048 --dataset_size 200000 --init kaiming --n_layers 8 --pretrain_epochs 50000 --pretrain_lr 5e-5  --pretrain_batch 2048 --warmup_epochs 0 --scan --coupling spline
 
 Then the training loss:
+![fig16](images/spline_pretrain_loss.png)
 
+And the PPO iters makes the distribution becomes:
+![gif9](images/spline_distribution_evolution.gif)
